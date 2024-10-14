@@ -1,0 +1,22 @@
+{
+  "build": {
+    "env": {
+      "DATABASE_URL":"mongodb+srv://pubg12thpubg:FRgfxyfMHg46rzER@nextauth.qeqzk.mongodb.net/client?retryWrites=true&w=majority&appName=nextauth"
+    }
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["prisma/schema.prisma"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
